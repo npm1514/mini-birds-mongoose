@@ -2,7 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
-var sightingCtrl = require('./controllers/sightingCtrl');
+
+var SightingCtrl = require('./controllers/SightingCtrl');
+var UserCtrl = require('./controllers/UserCtrl');
 
 var app = express();
 app.use(bodyParser.json());
@@ -15,11 +17,15 @@ mongoose.connection.once('open', function(){
   console.log("Connected to mongoDB");
 });
 
-app.post('/api/sighting', sightingCtrl.create);
-app.get('/api/sighting',sightingCtrl.read);
-app.put('/api/sighting/:id',sightingCtrl.update);
-app.delete('/api/sighting/:id',sightingCtrl.delete);
+app.post('/sighting', SightingCtrl.create);
+app.get('/sighting',SightingCtrl.read);
+app.put('/sighting/:id',SightingCtrl.update);
+app.delete('/sighting/:id',SightingCtrl.delete);
 
+app.post('/user', UserCtrl.create);
+app.get('/user',UserCtrl.read);
+app.put('/user/:id',UserCtrl.update);
+app.delete('/user/:id',UserCtrl.delete);
 
 app.listen(9000, function(){
   console.log("listening to 9000");

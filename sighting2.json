@@ -2,7 +2,7 @@
 
 {
     "sightings": [{
-        "user": "anObjectID",
+        "user": "569ff58cb06e5aec122650ee",
         "bird": [{
           "name": "red breasted merganser",
           "order": "Anseriformes",
@@ -16,7 +16,7 @@
         "numberSeen": 2
     },
     {
-        "user": "anObjectID",
+        "user": "569ff596b06e5aec122650ef",
         "bird": [{
           "name": "osprey",
           "order": "Accipitriformes",
